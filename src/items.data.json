@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "nombre": "Producto de ejemplo",
+    "descripcion": "Este es un producto inicial",
+    "precio": 10.5,
+    "stock": 4
+  },
+  {
+    "id": 2,
+    "nombre": "Cola",
+    "descripcion": "Bebida gaseosa",
+    "precio": 1,
+    "stock": 50
+  },
+  {
+    "id": 3,
+    "nombre": "Papas",
+    "descripcion": "Papas en funda procesadas",
+    "precio": 0.5,
+    "stock": 20
+  }
+]
