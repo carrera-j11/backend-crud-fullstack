@@ -8,10 +8,17 @@ dotenv.config();
 
 const app = express();
 
-const PORT = process.env.PORT;
-const CORS_ORIGIN = process.env.CORS_ORIGIN || '*';
+// Puerto para Railway
+const PORT = process.env.PORT || 8080;
 
-app.use(cors({ origin: CORS_ORIGIN }));
+// ✅ CORS PERMITIENDO LOCALHOST Y VERCEL
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://frontend-crud-fullstack.vercel.app"
+  ]
+}));
+
 app.use(express.json());
 app.use(morgan('dev'));
 
@@ -25,8 +32,6 @@ app.use((req, res) => {
   res.status(404).json({ error: 'Ruta no encontrada' });
 });
 
-const server = app.listen(PORT, () => {
+app.listen(PORT, () => {
   console.log(`Servidor escuchando en el puerto ${PORT}`);
 });
-
-export default server;
